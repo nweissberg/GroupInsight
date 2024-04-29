@@ -1,0 +1,22 @@
+{
+    "employees": [
+        {
+            "department": "Marketing",
+            "name": "John Doe",
+            "paycheck": "£5000.00",
+            "place": "Remote"
+        },
+        {
+            "department": "Software Engineering",
+            "name": "Jane Doe",
+            "paycheck": "£4000.00",
+            "place": "Remote"
+        },
+        {
+            "department": "Software Engineering",
+            "name": "Don Joe",
+            "paycheck": "£8000.00",
+            "place": "Office"
+        }
+    ]
+}
