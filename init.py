@@ -26,10 +26,6 @@ dir = os.path.dirname(__file__)
 os.path.join(dir, "/theme/awthemes")
 print(dir)
 
-path = config.get("project", "PATH")
-title = config.get("project", "TITLE")
-backend = config.get("project", "BACK")
-subtitle = config.get("project", "SUBTITLE")
 organization = config.get("project", "ORGANIZATION")
 token = config.get("project", "TOKEN")
 
@@ -63,7 +59,7 @@ class App(Tk):
     def __init__(self):
         super().__init__()
         # Create Window
-        self.title(title)
+        self.title("Group Insight")
         if fullscreen:
             width, height = self.winfo_screenwidth(), self.winfo_screenheight()
             self.geometry("%dx%d+0+0" % (width, height))
@@ -107,7 +103,7 @@ class App(Tk):
         # align button to the right
         self.btn_close.grid(row=0, column=0, sticky=E, padx=10, pady=10)
 
-        frame_toolbar = LabelFrame(self, text=subtitle)
+        frame_toolbar = LabelFrame(self, text="Github Contributions")
         frame_toolbar.grid(padx=10, pady=10, column=0, row=1)
         self.timespan = timespan
         self.date_start = DateEntry(

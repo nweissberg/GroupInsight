@@ -1,0 +1,7 @@
+tk
+PIL
+Pillow
+PyGithub
+requests
+slack_sdk
+tkcalendar
