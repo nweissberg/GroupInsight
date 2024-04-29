@@ -1,7 +1,5 @@
-tk
-PIL
 Pillow
-PyGithub
+tkinter
 requests
 slack_sdk
 tkcalendar
