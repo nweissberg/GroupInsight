@@ -1,1 +1,2 @@
-python init.py
+cd "$(dirname "$0")"
+python src/init.py
