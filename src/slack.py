@@ -1,9 +1,14 @@
 import os
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
+import configparser
+
+config = configparser.RawConfigParser()
+configFilePath = r".config"
+config.read(configFilePath)
 
 # Set your Slack API token
-slack_token = ""
+slack_token = config.get("project", "SLACK")
 client = WebClient(token=slack_token)
 
 # Function to list all channels and their IDs
@@ -90,9 +95,7 @@ def list_functions():
 # Example usage
 if __name__ == "__main__":
 	# List all channels and their IDs
-	# list_messages("C070WCSM6EP")
-	# list_teams()
 	for channel in list_channels():
 		print(channel['name'])
-	# list_functions()
-	# fetch_messages("C070WCSM6EP")
+	# List messages and their timestamps in a channel
+	fetch_messages("C070WCSM6EP")
