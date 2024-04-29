@@ -128,8 +128,8 @@ class App(Tk):
         self.date_end.set_date(end_date)
         self.date_end.bind("<<DateEntrySelected>>", self.end_date_select)
 
-        # self.btn = Button(frame_toolbar, text="Update", command=self.async_request)
-        # self.btn.grid(padx=0, pady=0, column=2, row=0)
+        self.btn = Button(frame_toolbar, text="Update", command=self.async_request_update)
+        self.btn.grid(padx=0, pady=0, column=2, row=0)
 
         cols = ("#", "Member", "Role", "Total", "Period")
         self.listBox = Treeview(frame_toolbar, columns=cols, show="headings")
@@ -302,7 +302,7 @@ class App(Tk):
         except:
             self.frame_contribution.grid_forget()
 
-    def start_data_fetch(self):
+    def start_data_fetch(self, update=False):
         end_date = min(timestamp(self.date_end.get_date()), timestamp(datetime.today()))
 
         self.organization_data = get_organization_data(
@@ -313,6 +313,7 @@ class App(Tk):
             ],
             organization=organization,
             log=False,
+            update=update
         )
         self.update_leaderboard(self.organization_data)
         self.progress.stop()
@@ -332,6 +333,20 @@ class App(Tk):
         self.date_start["state"] = "disabled"
         self.date_end["state"] = "disabled"
 
+    def async_request_update(self):
+        def real_async_request():
+            self.progress.grid(row=3, column=0, columnspan=3, pady=2)
+            self.progress.start()
+            self.start_data_fetch(update=True)
+            # self.btn["state"] = "normal"
+            self.date_start["state"] = "normal"
+            self.date_end["state"] = "normal"
+
+        threading.Thread(target=real_async_request).start()
+        # self.btn["state"] = "disabled"
+        self.date_start["state"] = "disabled"
+        self.date_end["state"] = "disabled"
+        
 
 if __name__ == "__main__":
     app = App()

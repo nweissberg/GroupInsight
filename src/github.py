@@ -119,7 +119,7 @@ def update_leaderboard(token, git_data, period, fetch_from_cloud=True):
 
 
 def get_organization_data(
-    period, organization, token, log=False, on_local_store=on_callback
+    period, organization, token, log=False, on_local_store=on_callback, update=False
 ):
     jsonpath = collection / (organization + ".json")
 
@@ -132,7 +132,7 @@ def get_organization_data(
             )
             on_local_store(local_git_data)
             # return local_git_data if the selected period is within the stored data period
-            if period[1] <= data["period"][1]:
+            if period[1] <= data["period"][1] and update == False:
                 return local_git_data
             else:
                 # Retrieve user IDs for all members of the organization
