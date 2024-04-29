@@ -310,6 +310,7 @@ class App(Tk):
         end_date = min(timestamp(self.date_end.get_date()), timestamp(datetime.today()))
 
         self.organization_data = get_organization_data(
+            token=token,
             period=[
                 timestamp(self.date_start.get_date()),
                 end_date,
