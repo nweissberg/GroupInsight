@@ -1,6 +1,7 @@
 # GitHub Contribution Tracker
-
-![GitHub Contribution Tracker](https://github.com/nweissberg/GroupInsight/blob/main/src/images/app.png)
+<p align="center">
+  <img src="https://github.com/nweissberg/GroupInsight/blob/main/src/images/app.png" alt="GitHub Contribution Tracker" width="500px">
+</p>
 
 ## Description
 The GitHub Contribution Tracker is a Python application that allows you to track the contributions of members in a GitHub organization over a specified time period. It provides a graphical interface to visualize the contribution activity of each member within the organization.
