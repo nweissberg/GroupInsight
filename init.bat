@@ -1,2 +1,4 @@
-cd "$(dirname "$0")"
-python src/init.py
+@echo off
+cd /d "%~dp0"
+wscript src\run.vbs
+exit

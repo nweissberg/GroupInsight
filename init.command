@@ -1,3 +1,3 @@
-#! /usr/bin/env bash
+#!/bin/bash
 cd "$(dirname "$0")"
-python3 init.py
+nohup python3 init.py > /dev/null 2>&1 &
