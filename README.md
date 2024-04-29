@@ -1,4 +1,3 @@
-# Group Insight
 <p align="center">
   <img src="https://github.com/nweissberg/GroupInsight/blob/main/src/images/app.png" alt="GitHub Contribution Tracker" width="500px">
 </p>
