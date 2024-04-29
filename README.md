@@ -34,7 +34,7 @@ end_date = 2024-04-28
 
 8. Close the application window when finished.
 
-Dependencies
+## Dependencies
 - Python 3
 - tkinter
 - tkcalendar
