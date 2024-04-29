@@ -6,7 +6,9 @@ The GitHub Contribution Tracker is a Python application that allows you to track
 1. Install Python if not already installed. You can download Python from here: https://www.python.org/downloads/.
 
 2. Install project dependencies by running the following command:
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 3. Modify the .config file to set your GitHub organization, access token, and other settings.
 ```
